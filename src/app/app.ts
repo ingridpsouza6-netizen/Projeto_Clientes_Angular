@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+//importação para as duas páginas(CADASTRO E CONSULTA) aparecerem
 import { RouterOutlet } from '@angular/router';
 
 @Component({
