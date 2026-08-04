@@ -1,1 +1,27 @@
-<p>cadastro works!</p>
+<h1>Cadastro de Clientes</h1>
+
+<form [formGroup]="formulario">
+<!-- está ligado ao formulário que criei no cadastro.ts -->
+
+  <label>Nome:</label>
+  <input type="text" formControlName="nome">
+  <!--conectei o campo nome ao type OBS:mesma coisa aconteçe nas próximas linhas -->
+
+  <label>E-mail:</label>
+  <input type="email" formControlName="email">
+
+  <label>CPF:</label>
+  <input type="text" formControlName="cpf">
+
+  <label>Data de nascimento:</label>
+  <input type="date" formControlName="dataNascimento">
+
+  <label>UF:</label>
+  <input type="text" formControlName="uf">
+
+  <label>Município:</label>
+  <input type="text" formControlName="municipio">
+
+  <button type="submit">Cadastrar</button>
+  <!--apenas criei o botão cadastrar-->
+</form>
