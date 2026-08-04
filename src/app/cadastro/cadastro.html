@@ -6,6 +6,10 @@
   <label>Nome:</label>
   <input type="text" formControlName="nome">
   <!--conectei o campo nome ao type OBS:mesma coisa aconteçe nas próximas linhas -->
+  @if (formulario.controls.nome.invalid && formulario.controls.nome.touched) {
+    <p>O nome é obrigatório.</p>
+  }
+  <!--mostrar a mensagem de obrigatorio-->
 
   <label>E-mail:</label>
   <input type="email" formControlName="email">
