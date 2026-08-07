@@ -1,0 +1,87 @@
+/* Página de cadastro */
+form {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+  
+    background: #fff8fc;
+  
+    border: 2px solid #f3c6dc;
+    border-radius: 20px;
+  
+    box-shadow: 0 5px 15px #eadde5;
+  }
+  
+  /* Título */
+  h1 {
+    text-align: center;
+    color: #9b6b91;
+  }
+  
+  /* Labels */
+  label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  
+    color: #80687c;
+    font-weight: bold;
+  }
+  
+  /* Campos */
+  input {
+    width: 100%;
+    padding: 10px;
+  
+    box-sizing: border-box;
+  
+    border: 2px solid #d9c8ed;
+    border-radius: 10px;
+  
+    background: #fff;
+  }
+  
+  /* Quando clicar no campo */
+  input:focus {
+    outline: none;
+    border-color: #a9dce9;
+    background: #f4fcff;
+  }
+  
+  /* Mensagem de erro */
+  p {
+    color: #d889a5;
+    margin: 5px 0;
+  }
+  
+  /* Botão */
+  button {
+    width: 100%;
+  
+    margin-top: 20px;
+    padding: 12px;
+  
+    border: none;
+    border-radius: 20px;
+  
+    background: linear-gradient(
+      90deg,
+      #f3bfd5,
+      #d8c5ed,
+      #b9dfeb,
+      #c8e6ce,
+      #f3dfaa
+    );
+  
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  
+    cursor: pointer;
+  }
+  
+  /* Efeito do botão */
+  button:hover {
+    opacity: 0.85;
+  }

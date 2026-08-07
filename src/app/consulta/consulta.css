@@ -1,0 +1,83 @@
+/* Página de consulta */
+
+h1 {
+    text-align: center;
+    color: #9b6b91;
+    margin-top: 30px;
+  }
+  
+  /* Área da consulta */
+  .consulta {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+  }
+  
+  /* Campo de pesquisa */
+  input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  
+    border: 2px solid #d9c8ed;
+    border-radius: 12px;
+  
+    background: #fff8fc;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #a9dce9;
+  }
+  
+  /* Lista */
+  .lista {
+    margin-top: 25px;
+  }
+  
+  /* Cada cliente */
+  .cliente {
+    background: #fff8fc;
+  
+    padding: 20px;
+    margin-bottom: 15px;
+  
+    border: 2px solid #f3c6dc;
+    border-radius: 18px;
+  
+    box-shadow: 0 4px 12px #eadde5;
+  }
+  
+  /* Nome */
+  .cliente h2 {
+    color: #9b6b91;
+  }
+  
+  /* Informações */
+  .cliente p {
+    color: #756a78;
+  }
+  
+  /* Botões */
+  button {
+    padding: 10px 20px;
+  
+    border: none;
+    border-radius: 20px;
+  
+    background: linear-gradient(
+      90deg,
+      #f3bfd5,
+      #d8c5ed,
+      #b9dfeb
+    );
+  
+    color: white;
+    font-weight: bold;
+  
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.85;
+  }

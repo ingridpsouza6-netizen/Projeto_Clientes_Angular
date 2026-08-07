@@ -4,13 +4,13 @@
 <!-- está ligado ao formulário que criei no cadastro.ts -->
 
   <label>Nome:</label>
+   <!--conectei o campo nome ao type OBS:mesma coisa aconteçe nas próximas linhas -->
   <input type="text" formControlName="nome">
-  <!--conectei o campo nome ao type OBS:mesma coisa aconteçe nas próximas linhas -->
+  <!--mostrar a mensagem de obrigatorio-->
   @if (formulario.controls.nome.invalid && formulario.controls.nome.touched) {
     <p>O nome é obrigatório.</p>
   }
-  <!--mostrar a mensagem de obrigatorio-->
-
+  
   <label>E-mail:</label>
   <input type="email" formControlName="email">
 
@@ -26,6 +26,6 @@
   <label>Município:</label>
   <input type="text" formControlName="municipio">
 
-  <button type="submit">Cadastrar</button>
-  <!--apenas criei o botão cadastrar-->
+  <button type="button" (click)="cadastrar()">Cadastrar</button>
+  <!--1 criei o botão e depois apaguei e refiz para ele funcionar-->
 </form>

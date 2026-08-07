@@ -1,1 +1,66 @@
-<p>consulta works!</p>
+<h1>Consulta de Clientes</h1>
+
+<div class="pesquisa">
+  <input
+    type="text"
+    placeholder="Digite o nome do cliente"
+    [(ngModel)]="nomePesquisa"
+  >
+</div>
+
+@if (clienteEditando) {
+  <div class="formulario-edicao">
+
+    <h2>Editar Cliente</h2>
+
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="clienteEditando.nome">
+
+    <label>E-mail:</label>
+    <input type="text" [(ngModel)]="clienteEditando.email">
+
+    <label>CPF:</label>
+    <input type="text" [(ngModel)]="clienteEditando.cpf">
+
+    <label>Data de nascimento:</label>
+    <input type="date" [(ngModel)]="clienteEditando.dataNascimento">
+
+    <label>UF:</label>
+    <input type="text" [(ngModel)]="clienteEditando.uf">
+
+    <label>Município:</label>
+    <input type="text" [(ngModel)]="clienteEditando.municipio">
+
+    <button type="button" (click)="salvarAlteracao()">
+      Salvar alteração
+    </button>
+  </div>
+}
+
+<div class="lista-clientes">
+
+    @if (clienteService.clientes.length === 0) {
+        <p>Nenhum cliente cadastrado.</p>
+      }
+      
+      @for (cliente of clientesFiltrados(); track cliente.cpf) {
+        <div>
+          <p>Nome: {{ cliente.nome }}</p>
+          <p>E-mail: {{ cliente.email }}</p>
+          <p>CPF: {{ cliente.cpf }}</p>
+          <p>Data de nascimento: {{ cliente.dataNascimento }}</p>
+          <p>UF: {{ cliente.uf }}</p>
+          <p>Município: {{ cliente.municipio }}</p>
+
+          <button type="button" (click)="editar(cliente)">
+            Editar
+          </button>
+
+          <button type="button" (click)="excluir(cliente)">
+            Excluir
+          </button>
+
+        </div>
+        
+      }
+</div>
