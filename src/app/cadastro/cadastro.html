@@ -29,3 +29,80 @@
   <button type="button" (click)="cadastrar()">Cadastrar</button>
   <!--1 criei o botão e depois apaguei e refiz para ele funcionar-->
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input
+  type="date"
+  name="dataNascimento"
+  id="dataNascimento"
+  [(ngModel)]="dataNascimento"
+  class="elem-form-02"
+  required
+>
+
+
+<!-- Campo de seleção do estado (UF). -->
+<label for="uf">UF</label>
+
+<!-- Lista de estados disponíveis. -->
+<select name="uf" id="uf" [(ngModel)]="uf" class="elem-form-02">
+
+  <option value="">
+    Selecione uma UF
+  </option>
+
+  @for (elem of listaUFs; track elem.id) {
+    <option [ngValue]="elem">
+      {{elem.sigla}} - {{elem.nome}}
+    </option>
+  }
+
+</select>
+
+
+<!-- Campo de seleção da cidade. -->
+<label for="municipio">Município</label>
+
+<!-- Lista de cidades disponíveis. -->
+<select name="municipio" id="municipio" [(ngModel)]="municipio"
+  [disabled]="listaMunicipios.length === 0"
+  class="elem-form-02">
+
+  <option value="Aracaju">
+    Aracaju
+  </option>

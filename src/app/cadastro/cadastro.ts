@@ -46,3 +46,181 @@ export class Cadastro {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+} else {
+
+  // Gera um novo ID.
+  pessoa.id = this.pessoaService.tamanhoArray() + 1;
+
+  // Adiciona a nova pessoa.
+  this.pessoaService.adicionar(pessoa);
+
+}
+
+// Limpa os campos após salvar
+this.limpaAtributos();
+}
+
+// Atualiza uma pessoa após confirmação.
+alterar(pessoa: Pessoa) {
+
+  // Exibe uma confirmação ao usuário.
+  if (confirm("Tem certeza que deseja Alterar a Pessoa?")) {
+
+    // Atualiza os dados da pessoa.
+    this.pessoaService.editar(pessoa);
+  }
+}
+
+carregaEstadosSelect() {
+  this.ufMunicipioService.listaUF()
+    .subscribe({
+      next: (dadosUf) => {
+        this.listaUFs = dadosUf
+      },
+      error: (msgErro) => {
+        console.log('Erro ao carregar os Estados', msgErro)
+      }
+    })
+}
+
+carregandaMunicipiosSelect() {
+  if(!this.uf){
+    this.municipio= ''
+    this.listaMunicipios = []
+
+    return
+  }
+
+  this.ufMunicipioService.listaMunicipios(Number(this.uf))
+  .subscribe({
+    next: (dadosMunicipio) => {
+      this.listaMunicipios = dadosMunicipio
+    },
+    error: (msgErro) => {
+      console.log('Erro ao carregar os municípios: ' msgErro)
+    }
+  })
+  }
+
+  carregaMunícipiosSelect() {
+    if(!this.uf) {
+      this.municipio = ''
+      this.listaMunicipios = []
+
+      return
+    }
+    this.ufMunicipioService.listaMunicipios(Number(this.uf))
+    .subscribe
+    next: (dadosMunicipio) = 
+  }
+
+
+
+
