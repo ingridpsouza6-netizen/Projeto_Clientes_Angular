@@ -1,108 +1,139 @@
-<h1>Cadastro de Clientes</h1>
+<div class="container">
+  <div class="card">
 
-<form [formGroup]="formulario">
-<!-- está ligado ao formulário que criei no cadastro.ts -->
+    <div id="div-form">
 
-  <label>Nome:</label>
-   <!--conectei o campo nome ao type OBS:mesma coisa aconteçe nas próximas linhas -->
-  <input type="text" formControlName="nome">
-  <!--mostrar a mensagem de obrigatorio-->
-  @if (formulario.controls.nome.invalid && formulario.controls.nome.touched) {
-    <p>O nome é obrigatório.</p>
-  }
-  
-  <label>E-mail:</label>
-  <input type="email" formControlName="email">
+      <h2>Cadastro</h2>
 
-  <label>CPF:</label>
-  <input type="text" formControlName="cpf">
+      <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
 
-  <label>Data de nascimento:</label>
-  <input type="date" formControlName="dataNascimento">
+        <!-- Campo Nome -->
+        <label for="nome">Nome:</label>
 
-  <label>UF:</label>
-  <input type="text" formControlName="uf">
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          formControlName="nome"
+          required
+        >
 
-  <label>Município:</label>
-  <input type="text" formControlName="municipio">
-
-  <button type="button" (click)="cadastrar()">Cadastrar</button>
-  <!--1 criei o botão e depois apaguei e refiz para ele funcionar-->
-</form>
+        <!-- Mensagem de nome obrigatório -->
+        @if (formulario.controls.nome.invalid && formulario.controls.nome.touched) {
+          <p>O nome é obrigatório.</p>
+        }
 
 
+        <!-- Campo E-mail -->
+        <label for="email">Email:</label>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          formControlName="email"
+          required
+        >
+
+        <!-- Mensagem de e-mail inválido -->
+        @if (formulario.controls.email.invalid && formulario.controls.email.touched) {
+          <p>Digite um e-mail válido.</p>
+        }
 
 
+        <!-- Campo CPF -->
+        <label for="cpf">CPF:</label>
+
+        <input
+          type="text"
+          id="cpf"
+          name="cpf"
+          formControlName="cpf"
+          required
+        >
 
 
+        <!-- Campo Data de Nascimento -->
+        <label for="dataNascimento">
+          Data de Nascimento:
+        </label>
+
+        <input
+          type="date"
+          id="dataNascimento"
+          name="dataNascimento"
+          formControlName="dataNascimento"
+          required
+        >
 
 
+        <!-- Campo UF -->
+        <label for="uf">UF:</label>
+
+        <select
+          id="uf"
+          name="uf"
+          formControlName="uf"
+          (change)="carregarMunicipios()"
+          class="elem-form-02"
+        >
+
+          <option value="">
+            Selecione o estado
+          </option>
+
+          @for (elem of listaUfs; track elem.id) {
+
+            <option [value]="elem.id">
+              {{ elem.sigla }} - {{ elem.nome }}
+            </option>
+
+          }
+
+        </select>
 
 
+        <!-- Campo Município -->
+        <label for="municipio">
+          Município:
+        </label>
+
+        <select
+          id="municipio"
+          name="municipio"
+          formControlName="municipio"
+          [disabled]="municipios.length === 0"
+          class="elem-form-02"
+        >
+
+          <option value="">
+            Selecione o município
+          </option>
+
+          @for (elem of municipios; track elem.id) {
+
+            <option [value]="elem.nome">
+              {{ elem.nome }}
+            </option>
+
+          }
+
+        </select>
 
 
+        <!-- Botão Cadastrar -->
+        <button type="submit">
+          Cadastrar
+        </button>
 
+        <!-- Botão Limpar -->
+        <button type="reset">
+          Limpar
+        </button>
 
+      </form>
 
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<input
-  type="date"
-  name="dataNascimento"
-  id="dataNascimento"
-  [(ngModel)]="dataNascimento"
-  class="elem-form-02"
-  required
->
-
-
-<!-- Campo de seleção do estado (UF). -->
-<label for="uf">UF</label>
-
-<!-- Lista de estados disponíveis. -->
-<select name="uf" id="uf" [(ngModel)]="uf" class="elem-form-02">
-
-  <option value="">
-    Selecione uma UF
-  </option>
-
-  @for (elem of listaUFs; track elem.id) {
-    <option [ngValue]="elem">
-      {{elem.sigla}} - {{elem.nome}}
-    </option>
-  }
-
-</select>
-
-
-<!-- Campo de seleção da cidade. -->
-<label for="municipio">Município</label>
-
-<!-- Lista de cidades disponíveis. -->
-<select name="municipio" id="municipio" [(ngModel)]="municipio"
-  [disabled]="listaMunicipios.length === 0"
-  class="elem-form-02">
-
-  <option value="Aracaju">
-    Aracaju
-  </option>
+  </div>
+</div>
